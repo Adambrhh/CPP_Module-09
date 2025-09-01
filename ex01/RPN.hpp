@@ -6,7 +6,7 @@
 /*   By: abarahho <abarahho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 09:48:29 by abarahho          #+#    #+#             */
-/*   Updated: 2025/09/01 09:57:25 by abarahho         ###   ########.fr       */
+/*   Updated: 2025/09/01 15:24:47 by abarahho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class RPN
 {
 private:
     std::stack<int> _operands;
-
 public:
     RPN();
     RPN(const RPN&);

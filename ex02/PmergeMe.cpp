@@ -102,18 +102,21 @@ void PmergeMe::mergeInsertSort(std::vector<int>& vec, int left, int right)
 void PmergeMe::insertionSort(std::list<int>& lst)
 {
     std::list<int>::iterator it = lst.begin();
-    while (it != lst.end()) {
+    while (it != lst.end())
+    {
         int key = *it;
         std::list<int>::iterator j = it;
-        while (j != lst.begin()) {
+        while (j != lst.begin()) 
+        {
             std::list<int>::iterator prev = j;
             --prev;
-            if (*prev > key) {
+            if (*prev > key)
+            {
                 *j = *prev;
                 j = prev;
-            } else {
-                break;
             }
+            else
+                break;
         }
         *j = key;
         it++;
@@ -123,11 +126,15 @@ void PmergeMe::insertionSort(std::list<int>& lst)
 std::list<int> PmergeMe::merge(std::list<int>& left, std::list<int>& right)
 {
     std::list<int> result;
-    while (!left.empty() && !right.empty()) {
-        if (left.front() <= right.front()) {
+    while (!left.empty() && !right.empty())
+    {
+        if (left.front() <= right.front())
+        {
             result.push_back(left.front());
             left.pop_front();
-        } else {
+        }
+        else
+        {
             result.push_back(right.front());
             right.pop_front();
         }
@@ -145,16 +152,15 @@ void PmergeMe::mergeInsertSort(std::list<int>& lst)
     std::list<int>::iterator it = lst.begin();
     
     int i = 0;
-    while (i < (int)lst.size() / 2) {
+    while (i < (int)lst.size() / 2)
+    {
         left.push_back(*it);
         ++it;
         i++;
     }
     right.splice(right.begin(), lst, it, lst.end());
-
     mergeInsertSort(left);
     mergeInsertSort(right);
-
     lst = merge(left, right);
 }
 
@@ -167,9 +173,8 @@ void PmergeMe::parseInput(char** av, int ac)
     while (i < ac)
     {
         std::string arg = av[i];
-        if (arg.find_first_not_of("0123456789") != std::string::npos) {
+        if (arg.find_first_not_of("0123456789") != std::string::npos)
             throw std::runtime_error("Error: non-numeric or negative number.");
-        }
         int num = std::atoi(arg.c_str());
         _vec.push_back(num);
         _lst.push_back(num);
