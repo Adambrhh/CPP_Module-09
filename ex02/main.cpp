@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarahho <abarahho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 15:46:57 by abarahho          #+#    #+#             */
-/*   Updated: 2025/09/01 13:45:45 by abarahho         ###   ########.fr       */
+/*   Created: 2025/09/01 10:45:54 by abarahho          #+#    #+#             */
+/*   Updated: 2025/09/01 12:11:21 by abarahho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
 
 int main(int ac, char** av)
 {
-    if (ac != 2)
+    if (ac < 2)
     {
-        std::cerr << "Error: could not open file." << std::endl;
+        std::cerr << "Error: not enough arguments." << std::endl;
         return (1);
     }
     try
     {
-        BitcoinExchange btc;
-        btc.loadDatabase();
-        btc.processInputFile(av[1]);
+        PmergeMe pmerge;
+        pmerge.sort(av, ac);
     }
-    catch (const std::exception& e)
+    catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
         return (1);
