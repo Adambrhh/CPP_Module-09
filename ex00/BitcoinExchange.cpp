@@ -6,7 +6,7 @@
 /*   By: abarahho <abarahho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:47:03 by abarahho          #+#    #+#             */
-/*   Updated: 2025/09/01 14:02:26 by abarahho         ###   ########.fr       */
+/*   Updated: 2025/09/02 09:23:08 by abarahho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ bool BitcoinExchange::isValidDate(const std::string& date) const
         ss_month >> month;
         std::stringstream ss_day(date.substr(8, 2));
         ss_day >> day;
-        if (year < 2009 || month < 1 || month > 12 || day < 1 || day > 31)
+        if (month < 1 || month > 12 || day < 1 || day > 31)
             return (false);
         if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
             return (false);
